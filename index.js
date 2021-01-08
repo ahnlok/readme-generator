@@ -4,7 +4,6 @@ const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 
 // License Variables
-const apache = "Licensed under the [Apache License](https://spdx.org/licenses/Apache-2.0.html).";
 const gnu    = "Licensed under the [GNU GPLv3 License](https://spdx.org/licenses/GPL-3.0-or-later.html).";
 const mit    = "Licensed under the [MIT License](https://spdx.org/licenses/MIT.html).";
 const isc    = "Licensed under the [ISC License](https://spdx.org/licenses/ISC.html).";
@@ -25,7 +24,7 @@ const questions = [
     {
         type: "input",
         message: "What is your Github username?",
-        name: "username",
+        name: "github",
     },  
     {
         type: "input",
@@ -36,16 +35,16 @@ const questions = [
         type: "list",
         message: "What licesne do you like to use?",
         name: "license",
-        choices: ["MIT", "ISC", "Microsoft Public License", "Open Software License", "Mozilla Public License"]
+        choices: ["MIT", "ISC", "Microsoft Public License", "GNU GPLv3", "None"]
     },
 ];
 // function to write new ReadMe file
 function init() {
-    inquirere.prompt(questions).then((reponse) => {
+    inquirer.prompt(questions).then((response) => {
         console.log(response);
 
         const dynamicString = generateMarkdown(response);
-        
+
         fs.writeFile("goodreadme.md", dynamicString, (err) => {
             if (err) {
                 console.log(err);
