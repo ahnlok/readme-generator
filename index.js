@@ -1,9 +1,10 @@
 // TODO: Include packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown");
 // TODO: Create an array of questions for user input
 // const questions = [];
-inquirer.prompt([
+const questions = [
     {
         type: "input",
         message: "What is the title of your project?",
@@ -30,7 +31,7 @@ inquirer.prompt([
         name: "license",
         choices: ["MIT", "ISC", "Microsoft Public License", "Open Software License", "Mozilla Public License"]
     },
-])
+]
 .then((response) => {
     console.log(response);
     fs.appendFile("user.json", JSON.stringify(response), (err) => {
