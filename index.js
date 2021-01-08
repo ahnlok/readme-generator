@@ -23,19 +23,24 @@ const questions = [
     },  
     {
         type: "input",
-        message: "What is your Github username?",
+        message: "What is your Github?",
         name: "github",
     },  
     {
         type: "input",
-        message: "What is your email address?",
+        message: "What is your LinkedIn?",
+        name: "linkedin",
+    },  
+    {
+        type: "input",
+        message: "What is your email?",
         name: "email",
     },  
     {
         type: "list",
         message: "What licesne do you like to use?",
         name: "license",
-        choices: ["MIT", "ISC", "Microsoft Public License", "GNU GPLv3", "None"]
+        choices: ["MIT", "ISC", "", "GNU GPLv3", "None"]
     },
 ];
 // function to write new ReadMe file

@@ -14,7 +14,32 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
   const generateMarkdown = ({ title, description, github, linkedin, email, license }) = {
     const readMeWriteFile = `
-    `
+    # **${data.title}**
+    ## **${data.description}**
+    # Table of Contents
+    * [Installation](#installation)
+    * [Usage](#usage)
+    * [Tests](#tests)
+    * [License](#license)
+    * [Contributions](#contributions)
+    * [Questions](#questions)
+ 
+    # Installation
+    ${data.installation}
+    # Usage
+    ${data.usage}
+    # Tests
+    ${data.tests}
+    # License
+    ${data.license}
+    # Contributions
+    ${data.contributors}
+    # Questions
+    If you have any questions, please contact the project owner by clicking on the email listed below.  ${data.email}
+    
+    
+  `;
+  }
   }
   return `# ${data.title}
 
