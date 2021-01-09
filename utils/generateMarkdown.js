@@ -1,22 +1,11 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  const generateMarkdown = ({ title, description, github, linkedin, email, license }) = {
-    const readMeWriteFile = `
-    # **${data.title}**
-    ## **${data.description}**
-    # Table of Contents
+const generateMarkdown = (answers) =>
+  `
+    # ${answers.title}
+    ## Description: 
+    ${answers.description}
+    ## Table of Contents
     * [Installation](#installation)
     * [Usage](#usage)
     * [Tests](#tests)
@@ -25,25 +14,25 @@ function generateMarkdown(data) {
     * [Questions](#questions)
  
     # Installation
-    ${data.installation}
+    ![installation](${answers.image})
+    ---
     # Usage
-    ${data.usage}
-    # Tests
-    ${data.tests}
+    Here you checkout deployed repository for this project
+    <${answers.repo}>
+    ---
     # License
-    ${data.license}
+    ${answers.license} Copyright (c) [2021] [${answers.name}]
+    ---
+    # Contact
+    Email: <${answers.email}>
+    GitHub: <${answers.github}>
+    LinkedIn: <${answers.linkedin}>
+    ---
     # Contributions
-    ${data.contributors}
+    If you want to be a contributor send me an email to <${answers.email}>
     # Questions
-    If you have any questions, please contact the project owner by clicking on the email listed below.  ${data.email}
-    
-    
+    If you have any questions, please contact the project owner by clicking on the email listed below.  
+    <${answers.email}>
   `;
-  }
-  }
-  return `# ${data.title}
-
-`;
-}
-
+ 
 module.exports = generateMarkdown;
